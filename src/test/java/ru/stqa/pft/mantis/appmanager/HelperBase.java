@@ -55,12 +55,4 @@ public class HelperBase {
             return false;
         }
     }
-
-    public void signIn(String username, String password) {
-        type(By.name("username"), username);
-        type(By.name("password"), password);
-        click(By.cssSelector("input[value='Login']"));
-    }
-
-
 }
