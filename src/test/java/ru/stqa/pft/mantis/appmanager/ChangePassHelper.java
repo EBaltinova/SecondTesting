@@ -1,6 +1,7 @@
 package ru.stqa.pft.mantis.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import ru.stqa.pft.mantis.tests.TestBase;
 
 public class ChangePassHelper extends HelperBase {
@@ -14,9 +15,9 @@ public class ChangePassHelper extends HelperBase {
         type(By.name("password"), password);
         click(By.cssSelector("input[value='Login']"));
     }
-    public void manageUsers() {
+    public void manageUsers(String user) {
         click(By.cssSelector("body > div:nth-child(4) > p > span:nth-child(1) > a"));
-        click(By.cssSelector("body > table:nth-child(8) > tbody > tr:nth-child(7) > td:nth-child(1) > a"));
+        click(By.xpath("//html/body/table[3]/tbody/tr/td/a[contains(.,\"" + user + "\")]"));
         click(By.cssSelector("input[value='Reset Password']"));
     }
     public void finish(String confirmationLink, String password) {
